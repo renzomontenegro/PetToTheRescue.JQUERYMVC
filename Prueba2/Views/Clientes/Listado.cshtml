@@ -1,0 +1,62 @@
+﻿
+@using Prueba2.ViewModel
+@model IEnumerable<ClientesViewModel>
+
+<table id="tbListadoCliente" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Contrasenia</th>
+            <th>DNI</th>
+            <th>Hora</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.idCliente</td>
+                <td>@item.usuario</td>
+                <td>@item.nombre</td>
+                <td>@item.apellidos</td>
+                <td>@item.contrasenia</td>
+                <td>@item.numDocumento</td>
+                <td>@item.horaMomento</td>
+                @*<td>
+                    <button data-id="@item.idCliente"
+                            class="btnEditarCliente btn btn-warning">
+                        Editar
+                    </button>
+                </td>
+                <td>
+                    <button data-id="@item.idCliente"
+                            class="btnEliminarCliente btn btn-danger">
+                        Eliminar
+                    </button>
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    loadDataTable();
+
+    function loadDataTable() {
+        let table = $("#tbListadoCliente").DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'colvis', 'print']
+
+        });
+
+        table.buttons().container()
+            .insertBefore("#tbListadoCliente_filter");
+    }
+
+
+</script>

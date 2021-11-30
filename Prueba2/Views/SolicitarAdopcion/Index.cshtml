@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Prueba2.Models.SolicitarAdopcion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Experiencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RazAdopcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actividades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoFuera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Viaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasCasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstEconomica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vivienda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainMascota)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experiencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazAdopcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actividades)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiempoFuera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Viaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasCasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Veterinaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstEconomica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vivienda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainMascota.Color)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdMascotas">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdMascotas">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdMascotas">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

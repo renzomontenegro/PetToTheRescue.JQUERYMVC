@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Prueba2.Models.MascotasEnAdopcion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Raza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorOjos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorPelaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CondMedica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RazDecision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmaRespaldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelRespaldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Administrador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColorOjos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColorPelaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CondMedica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazDecision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmaRespaldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelRespaldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Administrador.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Apellidos)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdMasAdopcion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdMasAdopcion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdMasAdopcion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
